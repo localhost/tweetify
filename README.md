@@ -1,8 +1,32 @@
-= Tweetify
+Tweetify
+========
 
-Tiny lib to linkify urls, hashes and usernames of a tweet.
+Tiny JavaScript library to linkify urls, hashes and usernames of a tweet.
+Latest version is always at [github.com/localhost/tweetify](http://github.com/localhost/tweetify).
 
-== License 
+Uses the [JSpec](http://jspec.info) framework for BDD testing (only required for Tweetify development).
+
+Usage
+-----
+
+Include `tweetify.js` (or `tweetify.min.js`) via the script tag in your project and *tweetify*
+(or just *linkify* / *hashify* / *userify*) strings e.g. like this: `"This is just some #Tweet".tweetify()`
+
+    <script>
+      // quick example using jQuery to fetch tweets
+      $.getJSON('http://twitter.com/status/user_timeline/localhost.json?count=5&callback=?', function(json) {
+        var tweets = $('#twitter ul.tweets');
+        tweets.empty();
+        $.each(json, function(i, tweet) {
+          tweets.append('<li class="tweet">' + tweet.text.tweetify() + '</li>');
+        }
+      }
+    </script>
+
+Note: You also override the Tweetify object with custom Twitter links and regexes.
+
+License
+-------
 
 (The MIT License)
 
