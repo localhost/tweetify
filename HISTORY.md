@@ -1,3 +1,7 @@
+### 0.0.3 / 2009-08-04
+
+* fixed linkify regex
+
 ### 0.0.2 / 2009-08-03
 
 * added global Tweetify object to store default config and regexes
